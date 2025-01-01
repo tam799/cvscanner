@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Home</title>
-</head>
-<body>
-    <h1>Welcome to the Home Page</h1>
-    <a href="{% url 'cvapp:upload_cv' %}">Upload CV</a>
-    <a href="{% url 'cvapp:dashboard' %}">Dashboard</a>
-</body>
-</html>
+<!-- filepath: /c:/Users/student/DD/myproject/cvapp/templates/cvapp/home.html -->
+{% extends "cvapp/base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h1>Welcome Home</h1>
+<p>This is the home page.</p>
+{% endblock %}

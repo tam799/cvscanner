@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Dashboard</title>
-</head>
-<body>
-    <h1>Dashboard</h1>
-    <ul>
-        {% for cv in cvs %}
-            <li>{{ cv.name }} - {{ cv.email }}</li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
+<!-- filepath: /c:/Users/student/DD/myproject/cvapp/templates/cvapp/dashboard.html -->
+{% extends "cvapp/base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<h1>Dashboard</h1>
+<ul>
+    {% for cv in cvs %}
+    <li>{{ cv.name }} - {{ cv.email }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

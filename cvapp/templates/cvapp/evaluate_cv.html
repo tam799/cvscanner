@@ -1,0 +1,43 @@
+{% extends "cvapp/base.html" %}
+
+{% block title %}Evaluate CV{% endblock %}
+
+{% block content %}
+<h1>Evaluate CV</h1>
+<form method="post" id="cv-evaluation-form">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="features">Enter Features (comma-separated):</label>
+        <input type="text" class="form-control" id="features" name="features" placeholder="e.g., 2, 3, 1, 4" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Evaluate</button>
+</form>
+<div id="result" class="mt-4"></div>
+
+<script>
+document.getElementById('cv-evaluation-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const featuresInput = document.getElementById('features').value;
+    const featuresArray = featuresInput.split(',').map(x => x.trim());
+    if (featuresArray.some(isNaN)) {
+        document.getElementById('result').innerText = 'Error: Please enter valid comma-separated numerical values.';
+        return;
+    }
+    const formData = new FormData(this);
+    fetch("{% url 'cvapp:evaluate_cv' %}", {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'X-CSRFToken': formData.get('csrfmiddlewaretoken')
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('result').innerText = 'Prediction: ' + data.prediction;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
+</script>
+{% endblock %}

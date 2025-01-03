@@ -1,0 +1,15 @@
+<!-- filepath: /c:/Users/student/DD/myproject/cvapp/templates/cvapp/dashboard.html -->
+{% extends "cvapp/base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<h1>Dashboard</h1>
+{% if prediction is not None %}
+    <div class="alert alert-info">
+        <strong>CV Evaluation Result:</strong> {{ prediction }}
+    </div>
+{% else %}
+    <p>No CV evaluation results available.</p>
+{% endif %}
+{% endblock %}

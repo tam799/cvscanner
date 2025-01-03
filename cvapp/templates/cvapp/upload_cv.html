@@ -1,0 +1,17 @@
+<!-- filepath: /c:/Users/student/DD/myproject/cvapp/templates/cvapp/upload_cv.html -->
+{% extends "cvapp/base.html" %}
+
+{% block title %}Upload CV{% endblock %}
+
+{% block content %}
+<h1>Upload Your CV</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="form-group">
+        <label for="cv">Upload your CV:</label>
+        <input type="file" class="form-control" id="cv" name="cv" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Upload</button>
+</form>
+{% endblock %}

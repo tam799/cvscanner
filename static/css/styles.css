@@ -1,9 +1,14 @@
 /* General styles */
 body {
-    background-color: #f8f9fa; /* Light background color */
+    background-color: #7f9cb9; /* Light background color */
     color: #333333;
     font-family: 'Roboto', sans-serif;
     margin-top: 5rem;
+}
+.custom-container {
+    max-width: 1200px; /* Adjust the max-width as needed */
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -15,11 +20,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-nav .nav-link {
-    color: #007bff;
+    color: #507194;
 }
 
 .navbar-nav .nav-link:hover {
-    color: #0056b3;
+    color: #507eae;
 }
 
 .content-section {
@@ -31,7 +36,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Footer styles */
 .site-footer {
-    background-color: #f8f9fa;
+    background-color: #929eab;
     padding: 2rem 0;
 }
 

@@ -21,6 +21,7 @@
 <body>
     <!-- Navigation Bar -->
     <header class="site-header">
+        <img src="{% static 'cvapp\CV app logo 1.png' %}" alt="Logo" style="height: 70px;">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">My Site</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,8 +36,11 @@
                         <a class="nav-link" href="{% url 'cvapp:upload_cv' %}">Upload CV</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{% url 'cvapp:evaluate_cv' %}">Evaluate</a>
+                    <li class="nav-item">
                         <a class="nav-link" href="{% url 'cvapp:dashboard' %}">Dashboard</a>
                     </li>
+                    
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     {% if user.is_authenticated %}

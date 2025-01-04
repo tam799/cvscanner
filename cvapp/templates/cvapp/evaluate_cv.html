@@ -7,8 +7,8 @@
 <form method="post" id="cv-evaluation-form">
     {% csrf_token %}
     <div class="form-group">
-        <label for="features">Enter Features (comma-separated):</label>
-        <input type="text" class="form-control" id="features" name="features" placeholder="e.g., 2, 3, 1, 4" required>
+        <label for="features">Enter Features (comma-separated words):</label>
+        <input type="text" class="form-control" id="features" name="features" placeholder="e.g., manager, communication, degree" required>
     </div>
     <button type="submit" class="btn btn-primary">Evaluate</button>
 </form>
@@ -19,8 +19,8 @@ document.getElementById('cv-evaluation-form').addEventListener('submit', functio
     event.preventDefault();
     const featuresInput = document.getElementById('features').value;
     const featuresArray = featuresInput.split(',').map(x => x.trim());
-    if (featuresArray.some(isNaN)) {
-        document.getElementById('result').innerText = 'Error: Please enter valid comma-separated numerical values.';
+    if (featuresArray.some(x => x === '')) {
+        document.getElementById('result').innerText = 'Error: Please enter valid comma-separated words.';
         return;
     }
     const formData = new FormData(this);

@@ -4,6 +4,39 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<h1>Welcome Home</h1>
-<p>This is the home page.</p>
+
+<div class="container-fluid mt-5">
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to CV Scanner</h1>
+        <p class="lead">Your one-stop solution for evaluating CVs and improving your job application or hiring process.</p>
+        <hr class="my-4">
+        <p>Upload your CV and get instant feedback on its suitability for the desired job role.</p>
+        <a class="btn btn-primary btn-lg" href="{% url 'cvapp:upload_cv' %}" role="button">Upload CV</a>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Key Features</h2>
+            <ul>
+                <li>Automated CV evaluation</li>
+                <li>Instant feedback</li>
+                <li>Advanced machine learning model</li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h2>How It Works</h2>
+            <p>Simply upload the CV, and our advanced machine learning model will analyze it and provide feedback on its suitability for the desired job role.</p>
+        </div>
+        <div class="col-md-4">
+            <h2>Testimonial</h2>
+          
+            <blockquote class="blockquote">
+                <p class="mb-0">"A fantastic tool for employers and job seekers. Highly recommended!"</p>
+                <footer class="blockquote-footer">John Smith</footer>
+            </blockquote>
+        </div>
+    </div>
+
+   
+</div>
 {% endblock %}

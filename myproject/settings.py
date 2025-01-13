@@ -38,11 +38,14 @@ ROOT_URLCONF = 'myproject.urls'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'local instance MySQL80',  # Replace with your actual database name
+        'NAME': 'local_instance_MySQL80',  # Replace with your actual database name
         'USER': 'user',  # Replace with your actual database user
         'PASSWORD': 'Abcdefghijk1',  # Replace with your actual database password
         'HOST': 'localhost',
         'PORT': '3306',
+        'TEST': {
+            'NAME': 'local instance cvapp',  # Specify the name of the test database
+        },
     }
 }
 
